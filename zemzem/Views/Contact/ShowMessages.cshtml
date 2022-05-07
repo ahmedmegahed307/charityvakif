@@ -1,0 +1,60 @@
+﻿@model List<TbContact>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+
+
+    <!-- breadcrumb start -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title">
+                        <h2>Gelen Mesajları</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb End -->
+    <!-- section start -->
+    @foreach (var item in Model)
+    {
+        <section class="section-b-space blog-detail-page review-page">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <ul class="comment-section">
+                            <li>
+                                <div class="media">
+                                    <img src="~/assets/images/icon/users.png" alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h3>@item.FirstName @item.LastName <span>(E-Posta: @item.Email )</span></h3>
+                                        <h5>
+                                            @item.Message
+                                        </h5>
+                                        <h3>@item.PhoneNumber</h3>
+                                       
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <hr />      }
+    <!-- Section ends -->
+
+
+</body>
+
+</html>

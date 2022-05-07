@@ -1,0 +1,108 @@
+﻿@model TbCategory
+
+
+
+
+
+<div class="page-body">
+
+
+
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="card card-info">
+                    <div class="card-header">
+                        <div class="btn btn-primary">Add/Edit Category</div>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form asp-controller="Category" asp-action="Save" method="post"
+                          role="form" class="form-horizontal" enctype="multipart/form-data">
+                        <div class="card-body">
+
+                            @*<div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Category</label>
+                                <div class="col-sm-4">
+                                    <input type="hidden" asp-for="TbCategoryId" />
+
+                                    <select class="form-control" asp-for="TbCategoryId" asp-items="@(new SelectList(ViewBag.cat,"TbCategoryId","Slug"))"></select>
+
+                                </div>
+                            </div>*@
+
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Category Name</label>
+                                <div class="col-sm-4">
+                                    <input type="text" asp-for="CategoryName" class="form-control" placeholder="Category Name">
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Category Title</label>
+                                <div class="col-sm-4">
+                                    <input type="text" asp-for="CategoryTitle" class="form-control" placeholder="CategoryTitle">
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Category Description</label>
+                                <div class="col-sm-4">
+                                    <input type="text" asp-for="CategoryDescription" class="form-control" placeholder="CategoryDescription">
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Category Image</label>
+                                <div class="col-sm-4">
+                                    <input type="file" name="Files" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-success">Submit</button>
+
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

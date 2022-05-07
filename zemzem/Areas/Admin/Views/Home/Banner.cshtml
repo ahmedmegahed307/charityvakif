@@ -1,0 +1,65 @@
+﻿
+@model List<TbBanner>
+<div class="page-body">
+
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="card card-info">
+                    <div class="card-body">
+
+                        <a asp-controller="Home" asp-action="EditBanner" class="btn btn-info">New Banner</a>
+
+                        <table class="table table-hover text-nowrap">
+
+                            <thead>
+                                <tr>
+
+                                    <th>Banner Id</th>
+                                    <th>Banner Image</th>
+                                    <th>Actions</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>@item.TbBannerId</td>
+
+
+                                        <td>
+                                            <img src="@string.Format("/Banner/{0}",item.BannerImage)" width="200" height="60" />
+                                        </td>
+                                        <td>
+                                            <a asp-controller="Home" asp-action="EditBanner" asp-route-id="@item.TbBannerId" class="btn btn-warning">Edit</a>
+                                            <a asp-controller="Home" asp-action="DeleteBanner" asp-route-id="@item.TbBannerId" class="btn btn-primary">Delete</a>
+                                        </td>
+
+
+                                    </tr>
+
+                                }
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid Ends-->
+
+
+
+
+</div>

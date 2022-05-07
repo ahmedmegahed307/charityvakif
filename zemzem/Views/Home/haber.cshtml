@@ -1,0 +1,82 @@
+﻿@model List<TbHaber>
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+
+   
+    <!-- breadcrumb start -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="page-title">
+                        <h2>Medya Haberler</h2>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"></a></li>
+                         
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb End -->
+    <!-- section start -->
+    <section class="section-b-space blog-page ratio2_3">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model.OrderByDescending(a => a.HaberDate))
+                {
+                    <div class="col-xl-12 col-lg-8 col-md-9">
+                        <div class="row blog-media">
+                            <div class="col-xl-6">
+                                <div class="blog-left">
+                                    <a href="#">
+                                        <img src="@string.Format("/haber/{0}",item.HaberImage)"
+                                             class="img-fluid blur-up lazyload bg-img" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="blog-right">
+                                    <div>
+                                        <h6 style="color:gray">@item.HaberDate</h6> <a href="#">
+                                            <h3 style="color:steelblue">
+                                                @item.Title
+                                            </h3>
+                                        </a>
+
+                                        <p style="color:lightseagreen">
+                                            @item.Discription
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <p>.</p>
+                    <hr />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                }
+
+            </div>
+            
+        </div>
+    </section>
+    <!-- Section ends -->
+    
+</body>
+
+</html>

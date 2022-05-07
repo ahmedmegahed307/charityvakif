@@ -1,0 +1,39 @@
+﻿@model List<TbCategory>
+<div class="page-body">
+
+    <a asp-controller="Category" asp-action="CategoryEdit" class="btn btn-primary">Add Category</a>
+    <br />
+    <table class="table table-hover text-nowrap">
+
+        <thead>
+            <tr>
+                <th>Category Name</th>
+                <th>Category Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+
+                <td>@item.CategoryName</td>
+                <td>
+                    <img src="@string.Format("/catimage/{0}",item.CategoryImage)" width="60" height="60" />
+                </td>
+                <td>
+                    <a asp-controller="Category" asp-action="CategoryEdit" asp-route-id="@item.TbCategoryId" class="btn btn-warning">Edit</a>
+                    <a asp-controller="Category" asp-action="Delete" asp-route-name="@item.CategoryName" class="btn btn-primary">Delete</a>
+                </td>
+
+
+            </tr>
+
+            }
+
+
+
+        </tbody>
+    </table>
+
+</div>

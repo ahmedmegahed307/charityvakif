@@ -1,0 +1,51 @@
+﻿@model List<TbProductImages>
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+    <!-- section start -->
+    <section class="section-b-space ratio_asos">
+        <div class="collection-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="collection-content col">
+                        <div class="page-main-content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    
+                                    <div class="collection-product-wrapper">
+                                        <div class="product-wrapper-grid">
+                                            <div class="row margin-res">
+                                                @foreach (var item in Model.OrderByDescending(a=>a.Product.ImageDate))
+                                                {
+                                                <div class="col-xl-3 col-6 col-grid-box">
+                                                    <div class="product-box">
+                                                        <div class="img-wrapper">
+                                                            <div class="front">
+                                                                <img src="@string.Format("/Uploads/{0}",item.ImageName)" class="img-fluid blur-up lazyload bg-img" alt="">
+                                                            </div>
+                                                            
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                                }
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section End -->
+   
+</body>
+
+</html>
